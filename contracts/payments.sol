@@ -574,6 +574,8 @@ contract PaymentGate is Ownable {
     using Address for address;
     using SafeERC20 for IERC20;
 
+    event Payment(address from, address token, uint amount);
+
     mapping(address => bool) private _tokenAllowed;
 
     mapping(address => address) private _referrals;
@@ -747,6 +749,7 @@ contract PaymentGate is Ownable {
                 ""
             );
             require(sent, "Failed to send BNB payment to owner");
+            emit Payment(msg.sender, address(0), amount);
         } else {
             require(
                 getTokenAllowance(_token),
@@ -777,6 +780,7 @@ contract PaymentGate is Ownable {
             } else {
                 IERC20(_token).safeTransfer(owner(), amount);
             }
+            emit Payment(msg.sender, _token, amount);
         }
     }
 }
