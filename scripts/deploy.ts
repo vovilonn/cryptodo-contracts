@@ -8,6 +8,8 @@ async function main() {
   const Greeter = await ethers.getContractFactory("PaymentGate");
   const greeter = await Greeter.deploy(constructorArguments[0]);
 
+  console.log(greeter.deployTransaction.hash);
+
   await greeter.deployed();
 
   console.log("Greeter deployed to:", greeter.address);

@@ -1,3 +1,13 @@
+// created by cryptodo.app
+//   _____                      _          _____         
+//  / ____|                    | |        |  __ \        
+// | |      _ __  _   _  _ __  | |_  ___  | |  | |  ___  
+// | |     | '__|| | | || '_ \ | __|/ _ \ | |  | | / _ \ 
+// | |____ | |   | |_| || |_) || |_| (_) || |__| || (_) |
+//  \_____||_|    \__, || .__/  \__|\___/ |_____/  \___/ 
+//                 __/ || |                              
+//                |___/ |_|      
+
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
@@ -1232,7 +1242,7 @@ contract {{contractName}} is ERC721Enumerable, Ownable, ReentrancyGuard {
 	uint256 public TOKEN_PER_TX = {{tokenPerTx}};
 	uint256 public TOKEN_PER_WALLET = {{tokenPerWallet}};
 	uint256 public PRICE = {{price}};
-	uint256 public constant TIME_FOR_GROWN = {{timeForGrown}};
+	uint256 public constant TIME_FOR_GROWN = {{timeForReveal}};
 	address public founder = {{founder}};
 
 	mapping (uint256 => uint256) private _entityBirthdays;

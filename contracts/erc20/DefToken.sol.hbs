@@ -1,3 +1,13 @@
+// created by cryptodo.app
+//   _____                      _          _____         
+//  / ____|                    | |        |  __ \        
+// | |      _ __  _   _  _ __  | |_  ___  | |  | |  ___  
+// | |     | '__|| | | || '_ \ | __|/ _ \ | |  | | / _ \ 
+// | |____ | |   | |_| || |_) || |_| (_) || |__| || (_) |
+//  \_____||_|    \__, || .__/  \__|\___/ |_____/  \___/ 
+//                 __/ || |                              
+//                |___/ |_|      
+
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
@@ -740,7 +750,7 @@ abstract contract ERC20Mintable is ERC20 {
 
 abstract contract ERC20Taxable is ERC20 {
 
-    uint256 public _taxFee = 800;
+    uint256 public _taxFee = {{burnFee}};
 
     function setTaxFee(uint256 _fee) external onlyOwner {
         _taxFee = _fee;
